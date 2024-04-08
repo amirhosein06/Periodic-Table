@@ -27,3 +27,19 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.sidebar .icon_box:last-child{
+    height: 145px;
+    flex-direction: column;
+}
+.input_box{
+    height: 80px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px 0;
+}
+.icon_box input[type="range"]{
+    rotate: -90deg;
+    width: 70px;
+}

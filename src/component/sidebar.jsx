@@ -8,7 +8,11 @@ const Sidebar = () => {
             <div className='icon_box'><i class="bi bi-search"></i></div>
             <div className='icon_box'><i class="bi bi-info-circle-fill"></i></div>
             
-            <div className='icon_box'><i class="bi bi-zoom-in"></i>
+            <div className='icon_box'>
+            <i class="bi bi-zoom-in"></i>
+            <div className='input_box'>
+            <input type="range" max={3} />
+            </div>
             <i class="bi bi-zoom-out"></i>
             </div>
         </div>
