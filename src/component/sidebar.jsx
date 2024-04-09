@@ -1,11 +1,16 @@
 import '../css/sidebar.css';
 
 const Sidebar = () => {
+
+    const goToSearch = ()=>{
+        window.location.assign('/search');
+    }
+
     return ( 
         <div className='sidebar'>
             <div className='icon_box'><i class="bi bi-brightness-high-fill"></i></div>
             <div className='icon_box' style={{fontSize: "20px"}}><i class="bi bi-filter"></i></div>
-            <div className='icon_box'><i class="bi bi-search"></i></div>
+            <div className='icon_box' onClick={goToSearch}><i class="bi bi-search"></i></div>
             <div className='icon_box'><i class="bi bi-info-circle-fill"></i></div>
             
             <div className='icon_box'>

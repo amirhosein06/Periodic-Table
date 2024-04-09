@@ -1,4 +1,4 @@
-:root{
+:root .sidebar{
     --backcolor: #101214;
     --itemcolor: #5a6672;
     --iconcolor: #fff;
@@ -42,4 +42,7 @@
 .icon_box input[type="range"]{
     rotate: -90deg;
     width: 70px;
+}
+.icon_box input[type="range"]::-webkit-slider-runnable-track{
+    background-color: red;
 }

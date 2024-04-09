@@ -1,12 +1,18 @@
-import Content from './component/content';
-import Sidebar from './component/sidebar';
+import ElementContex from './component/context/context';
+import Home from './component/home';
+import Search from './component/search';
 import './css/app.css';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Sidebar/>
-      <Content/>
+    <ElementContex.Provider value={{}}>
+      <Routes>
+      <Route path="/" Component={Home} />
+      <Route path="/search" Component={Search} />
+      </Routes>
+    </ElementContex.Provider>
     </>
   );
 }
