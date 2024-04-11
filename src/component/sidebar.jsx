@@ -10,6 +10,9 @@ const Sidebar = () => {
     const goToSearch = ()=>{
         window.location.assign('/search');
     }
+    const goToInfo = ()=>{
+        window.location.assign('/info');
+    }
     const handleRange = (e)=>{
        setrangeVal(e.target.value);
        elementcontext.zoomValset(e.target.value);
@@ -61,7 +64,7 @@ const Sidebar = () => {
             <i class="bi bi-zoom-out" onClick={handleRangeDecrease}></i>
             </div>
 
-            <div className='icon_box'><i class="bi bi-info-circle-fill"></i></div>
+            <div className='icon_box' onClick={goToInfo}><i class="bi bi-info-circle-fill"></i></div>
         </div>
      );
 }

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: popins;
+    src: url(../font/Poppins/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: latin;
+    src: url(../font/OrganicSaltPersonalUse-e9ZWO.otf);
+}
+:root .info_container{
+    --color: #fff;
+}
+.info_container{
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color);
+    font-family: popins;
+}
+.info_container .created{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.info_container .created span{
+    font-family: latin;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+.info_container .created a{
+    color: var(--color);
+    font-size: 22px;
+}
+.gitpage{
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
+    border: 1px solid var(--color);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: popins;
+    color: var(--color);
+    gap: 10px;
+    text-decoration: none;
+}
+.moreproject{
+    margin-top: 50px;
+    color: var(--color);
+    word-spacing: 5px;
+}
