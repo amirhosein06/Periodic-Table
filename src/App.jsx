@@ -4,6 +4,7 @@ import Search from './component/search';
 import './css/app.css';
 import { Route, Routes } from "react-router-dom";
 import { useState } from 'react';
+import NotFound from './component/notfound/notfound';
 
 function App() {
   const [zoomVal, setzoomVal] = useState(0);
@@ -20,6 +21,7 @@ function App() {
       <Routes>
       <Route path="/" Component={Home} />
       <Route path="/search" Component={Search} />
+      <Route path="*" element={<NotFound/>} />
       </Routes>
     </ElementContex.Provider>
     </>
