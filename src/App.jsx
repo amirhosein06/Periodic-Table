@@ -3,11 +3,17 @@ import Home from './component/home';
 import Search from './component/search';
 import './css/app.css';
 import { Route, Routes } from "react-router-dom";
+import { useState } from 'react';
 
 function App() {
+  const [zoomVal, setzoomVal] = useState(0);
+
   return (
     <>
-    <ElementContex.Provider value={{}}>
+    <ElementContex.Provider value={{
+      zoomVal: zoomVal,
+      zoomValset: setzoomVal
+    }}>
       <Routes>
       <Route path="/" Component={Home} />
       <Route path="/search" Component={Search} />
