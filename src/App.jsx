@@ -7,12 +7,15 @@ import { useState } from 'react';
 
 function App() {
   const [zoomVal, setzoomVal] = useState(0);
+  const [numStatus, setnumStatus] = useState("hidden");
 
   return (
     <>
     <ElementContex.Provider value={{
       zoomVal: zoomVal,
-      zoomValset: setzoomVal
+      zoomValset: setzoomVal,
+      numStatus: numStatus,
+      numStatusset: setnumStatus
     }}>
       <Routes>
       <Route path="/" Component={Home} />

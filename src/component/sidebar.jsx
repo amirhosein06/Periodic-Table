@@ -25,16 +25,31 @@ const Sidebar = () => {
             setrangeVal(rangeVal - 1);
             elementcontext.zoomValset(elementcontext.zoomVal - 1);
         }
-     }
+    }
+    const hideAndShowNum = ()=>{
+        if (elementcontext.numStatus === "hidden") {
+            elementcontext.numStatusset("visible");
+        }else{
+            elementcontext.numStatusset("hidden");
+        }
+    }
 
     return ( 
         <div className='sidebar'>
+
             <div className='icon_box'><i class="bi bi-brightness-high-fill"></i></div>
 
             <div className='icon_box' style={{fontSize: "20px"}}>
-                <div className="filter" style={{display: "none"}}></div>
+            <div className="filter" style={{display: "none"}}></div>
                 <i class="bi bi-filter"></i>
-                </div>
+            </div>
+            
+            <div className='icon_box'>
+            <div className="phase" style={{display: "none"}}></div>
+                <i class="bi bi-droplet-fill"></i>
+            </div>
+
+            <div className='icon_box' onClick={hideAndShowNum}><i class="bi bi-123"></i></div>
 
             <div className='icon_box' onClick={goToSearch}><i class="bi bi-search"></i></div>
 
