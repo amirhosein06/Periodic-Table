@@ -3,13 +3,18 @@ import Home from './component/home';
 import Search from './component/search';
 import './css/app.css';
 import { Route, Routes } from "react-router-dom";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import NotFound from './component/notfound/notfound';
 import Info from './component/info';
 
 function App() {
   const [zoomVal, setzoomVal] = useState(0);
   const [numStatus, setnumStatus] = useState("hidden");
+  // const [elementdata, setelementdata] = useState();
+
+  // useEffect(() => {
+  //   setelementdata(data);
+  // }, []);
 
   return (
     <>

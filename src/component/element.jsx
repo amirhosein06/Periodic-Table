@@ -1,7 +1,7 @@
 import '../css/element.css';
 
-const Element = () => {
-    return ( h );
+const Element = ({element}) => {
+    return ( <h1>{element.symbol}</h1> );
 }
  
 export default Element;
