@@ -1,3 +1,6 @@
+:root{
+  --scrollcolor: #fff
+}
 *{
     margin: 0;
     padding: 0;
@@ -5,11 +8,25 @@
 }
 body{
     height: 100vh;
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 2px;
 }
 #root{
     display: flex;
     align-items: center;
     height: 100%;
     gap: 1%;
+}
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollcolor);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
 }

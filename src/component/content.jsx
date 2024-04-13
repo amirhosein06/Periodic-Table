@@ -11,8 +11,10 @@ const Content = () => {
 
     // data filtering with block
     useEffect(() => {
+        const copy_St = [...datastate];
+        const blockSt = copy_St.filter(i=>i.atomicNumber < 3);
         const copy_S = [...datastate];
-        const blockS = copy_S.filter(i=>i.block === "s");
+        const blockS = copy_S.filter(i=>i.block === "s" && i.atomicNumber > 2);
         const copy_P = [...datastate];
         const blockP = copy_P.filter(i=>i.block === "p");
         const copy_D = [...datastate];
@@ -23,7 +25,8 @@ const Content = () => {
             blockS: blockS,
             blockP: blockP,
             blockD: blockD,
-            blockF: blockF
+            blockF: blockF,
+            blockSt: blockSt
         })
     }, []);
     
@@ -32,6 +35,9 @@ const Content = () => {
         <div className='content' style={{width: `${100 + (elementcontext.zoomVal * 20)}%`,
         height:`${100 + (elementcontext.zoomVal * 20)}%`}}>
             <div className='block_S_top'>
+            {blockedDtata.blockSt?.map((item,index)=>(
+                    <Element element={item} key={index}/>
+                ))}
                 <div className='fill_outer'></div>
             </div>
             <div className='block_S_bottom'>{
@@ -39,9 +45,27 @@ const Content = () => {
                     <Element element={item} key={index}/>
                 ))
             }</div>
-            <div className='block_P'>P</div>
-            <div className='block_D'>D</div>
-            <div className='block_F'>F</div>
+            <div className='block_P'>
+            {
+                blockedDtata.blockP?.map((item,index)=>(
+                    <Element element={item} key={index}/>
+                ))
+            }
+            </div>
+            <div className='block_D'>
+            {
+                blockedDtata.blockD?.map((item,index)=>(
+                    <Element element={item} key={index}/>
+                ))
+            }
+            </div>
+            <div className='block_F'>
+            {
+                blockedDtata.blockF?.map((item,index)=>(
+                    <Element element={item} key={index}/>
+                ))
+            }
+            </div>
 
             <div className="num_v" style={{visibility: elementcontext.numStatus}} >
                 <div>1</div>

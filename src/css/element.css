@@ -1,0 +1,55 @@
+@font-face {
+    font-family: popins;
+    src: url(../font/Raleway/Raleway-VariableFont_wght.ttf);
+}
+:root .element_container{
+    --textcolor: #fff;
+    --backcolor: #101214;
+    --shadowColor: #ffffff85;
+}
+.element_container{
+    border-bottom: 3px solid #fff;
+    margin: 2px;
+    color: var(--textcolor);
+    cursor: pointer;
+    background-color: var(--backcolor);
+    border-radius: 1px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 70% 30%;
+}
+.atomic_number{
+    display: inline;
+    grid-column: 2/-1;
+    grid-row: 1/2;
+    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
+    font-family: sans-serif;
+}
+.atom_symbol{
+    display: inline;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 2cqw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+.atom_name{
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: popins;
+    letter-spacing: 1.5px;
+    font-size: 8px;
+}
+.element_container:hover .atom_symbol{
+    text-shadow: 0px 0px 15px var(--shadowColor);
+}

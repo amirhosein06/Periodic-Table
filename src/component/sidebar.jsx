@@ -49,7 +49,7 @@ const Sidebar = () => {
             
             <div className='icon_box'>
             <div className="phase" style={{display: "none"}}></div>
-                <i class="bi bi-droplet-fill"></i>
+            <i class="bi bi-box"></i>
             </div>
 
             <div className='icon_box' onClick={hideAndShowNum}><i class="bi bi-123"></i></div>
