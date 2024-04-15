@@ -3,7 +3,7 @@ import '../css/info.css';
 const Info = () => {
     return ( 
         <div className="info_container">
-            <h1>Priodic Table</h1>
+            <h1>Periodic Table</h1>
             <div className='created'>
                <h3>Created By <span>Amirhosein Zolfaghary</span></h3>
                <a href="https://github.com/amirhosein06"><i class="bi bi-github"></i></a>
