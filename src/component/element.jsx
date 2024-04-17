@@ -39,7 +39,6 @@ export default Element;
 
 
 
-// const elementNameArray = element.name.split('');
-// style={{fontSize: (elementNameArray.length * -1) + 18 + 'px'}}
+
 //    <img src={`https://www.astronomy.ohio-state.edu/pogge.1/TeachRes/HandSpec/${element.name.toLowerCase()}.png`} alt="Chemical Elements" /> 
 //    <img src={`https://images-of-elements.com/${element.name.toLowerCase()}.jpg`} alt="images of Elements" /> 
