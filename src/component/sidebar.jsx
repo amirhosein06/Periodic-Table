@@ -55,6 +55,7 @@ const Sidebar = () => {
             [...ulChildrenArrayPhase].forEach((item)=>{
                 item.classList.remove('liActive');
             });
+            elementcontext.elementStateset([false,'']);
         }else{
             setfilterOpen(false);
             filterDiv.current.style.display = "none";
@@ -62,6 +63,7 @@ const Sidebar = () => {
             [...ulChildrenArrayFilter].forEach((item)=>{
                 item.classList.remove('liActive');
             });
+            elementcontext.gruopBlockset([false,'']);
         }
     }
     const handleOpenPhase =()=>{
@@ -80,6 +82,7 @@ const Sidebar = () => {
             [...ulChildrenArrayFilter].forEach((item)=>{
                 item.classList.remove('liActive');
             });
+            elementcontext.gruopBlockset([false,'']);
         }else{
             setphaseOpen(false);
             phaseDiv.current.style.display = "none";
@@ -87,8 +90,10 @@ const Sidebar = () => {
             [...ulChildrenArrayPhase].forEach((item)=>{
                 item.classList.remove('liActive');
             });
+            elementcontext.elementStateset([false,'']);
         }
     }
+
     const postLiDataGruopBlock = (e)=>{
         if (e.target.classList.value === '') {
         const ulChildrenArrayFilter = filterDiv.current.children[0].children;
@@ -104,6 +109,7 @@ const Sidebar = () => {
         }
         console.log(typeof e.target.dataset.gruopblok.toString());
     }
+
     const postLiDataElementstate = (e)=>{
         if (e.target.classList.value === '') {
             const ulChildrenArrayPhase = phaseDiv.current.children[0].children;
