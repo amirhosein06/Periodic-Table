@@ -125,6 +125,7 @@
     font-family: popins;
     text-transform: capitalize;
     list-style-type: '.';
+    font-weight: 400;
 }
 .sidebar li:hover{
     text-decoration: underline;
@@ -132,4 +133,7 @@
 .sidebar .liActive{
     font-weight: bolder;
     list-style-type: none;
+}
+.sidebar .liActive:hover{
+    text-decoration: none !important;
 }

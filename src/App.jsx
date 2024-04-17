@@ -10,11 +10,8 @@ import Info from './component/info';
 function App() {
   const [zoomVal, setzoomVal] = useState(0);
   const [numStatus, setnumStatus] = useState("hidden");
-  // const [elementdata, setelementdata] = useState();
-
-  // useEffect(() => {
-  //   setelementdata(data);
-  // }, []);
+  const [gruopBlock, setgruopBlock] = useState([false,'']);
+  const [elementState, setelementState] = useState([false,'']);
 
   return (
     <>
@@ -22,7 +19,11 @@ function App() {
       zoomVal: zoomVal,
       zoomValset: setzoomVal,
       numStatus: numStatus,
-      numStatusset: setnumStatus
+      numStatusset: setnumStatus,
+      gruopBlock: gruopBlock,
+      gruopBlockset: setgruopBlock,
+      elementState: elementState,
+      elementStateset: setelementState
     }}>
       <Routes>
       <Route path="/" Component={Home} />

@@ -1,6 +1,5 @@
 import '../css/sidebar.css';
-import { useState } from 'react';
-import { useContext,useRef } from 'react';
+import { useContext,useRef,useState } from 'react';
 import ElementContex from './context/context';
 
 const Sidebar = () => {
@@ -41,21 +40,82 @@ const Sidebar = () => {
         }
     }
     const handleOpenFilter =()=>{
+        const ulChildrenArrayFilter = filterDiv.current.children[0].children;
+        const ulChildrenArrayPhase = phaseDiv.current.children[0].children;
+
         if (filterOpen === false && phaseOpen === false) {
             filterDiv.current.style.display = "block";
             setfilterOpen(true);
+        }else if (filterOpen === false && phaseOpen === true) {
+            setphaseOpen(false);
+            handleOpenPhase();
+            filterDiv.current.style.display = "block";
+            setfilterOpen(true);
+            ulChildrenArrayPhase[0].classList.remove('liActive');
+            [...ulChildrenArrayPhase].forEach((item)=>{
+                item.classList.remove('liActive');
+            });
         }else{
-            filterDiv.current.style.display = "none";
             setfilterOpen(false);
+            filterDiv.current.style.display = "none";
+            ulChildrenArrayFilter[0].classList.remove('liActive');
+            [...ulChildrenArrayFilter].forEach((item)=>{
+                item.classList.remove('liActive');
+            });
         }
     }
     const handleOpenPhase =()=>{
+        const ulChildrenArrayFilter = filterDiv.current.children[0].children;
+        const ulChildrenArrayPhase = phaseDiv.current.children[0].children;
+
         if (filterOpen === false && phaseOpen === false) {
             phaseDiv.current.style.display = "block";
             setphaseOpen(true);
+        }else if (filterOpen === true && phaseOpen === false) {
+            setfilterOpen(false);
+            handleOpenFilter();
+            phaseDiv.current.style.display = "block";
+            setphaseOpen(true);
+            ulChildrenArrayFilter[0].classList.remove('liActive');
+            [...ulChildrenArrayFilter].forEach((item)=>{
+                item.classList.remove('liActive');
+            });
         }else{
-            phaseDiv.current.style.display = "none";
             setphaseOpen(false);
+            phaseDiv.current.style.display = "none";
+            ulChildrenArrayPhase[0].classList.remove('liActive');
+            [...ulChildrenArrayPhase].forEach((item)=>{
+                item.classList.remove('liActive');
+            });
+        }
+    }
+    const postLiDataGruopBlock = (e)=>{
+        if (e.target.classList.value === '') {
+        const ulChildrenArrayFilter = filterDiv.current.children[0].children;
+        ulChildrenArrayFilter[0].classList.remove('liActive');
+        [...ulChildrenArrayFilter].forEach((item)=>{
+            item.classList.remove('liActive');
+        });
+        e.target.classList.add('liActive');
+        elementcontext.gruopBlockset([true,e.target.dataset.gruopblok.toString()]);
+        }else{
+            e.target.classList.remove('liActive');
+            elementcontext.gruopBlockset([false,'']);
+        }
+        console.log(typeof e.target.dataset.gruopblok.toString());
+    }
+    const postLiDataElementstate = (e)=>{
+        if (e.target.classList.value === '') {
+            const ulChildrenArrayPhase = phaseDiv.current.children[0].children;
+            ulChildrenArrayPhase[0].classList.remove('liActive');
+            [...ulChildrenArrayPhase].forEach((item)=>{
+            item.classList.remove('liActive');
+            });
+            e.target.classList.add('liActive');
+            elementcontext.elementStateset([true,e.target.dataset.elementstate.toString()]);
+        }else{
+            e.target.classList.remove('liActive');
+            elementcontext.elementStateset([false,'']);
         }
     }
 
@@ -66,17 +126,17 @@ const Sidebar = () => {
 
             <div className="filter" style={{display: "none"}} ref={filterDiv}>
                 <ul>
-                    <li>post-transition metal</li>
-                    <li>alkali metal</li>
-                    <li>transition metal</li>
-                    <li>metal</li>
-                    <li>nonmetal</li>
-                    <li>lanthanoid</li>
-                    <li>metalloid</li>
-                    <li>actinoid</li>
-                    <li>noble gas</li>
-                    <li>halogen</li>
-                    <li>alkaline earth metal</li>
+                    <li data-gruopblok="post-transition metal" onClick={postLiDataGruopBlock}>post-transition metal</li>
+                    <li data-gruopblok="alkali metal" onClick={postLiDataGruopBlock}>alkali metal</li>
+                    <li data-gruopblok="transition metal" onClick={postLiDataGruopBlock}>transition metal</li>
+                    <li data-gruopblok="metal" onClick={postLiDataGruopBlock}>metal</li>
+                    <li data-gruopblok="nonmetal" onClick={postLiDataGruopBlock}>nonmetal</li>
+                    <li data-gruopblok="lanthanoid" onClick={postLiDataGruopBlock}>lanthanoid</li>
+                    <li data-gruopblok="metalloid" onClick={postLiDataGruopBlock}>metalloid</li>
+                    <li data-gruopblok="actinoid" onClick={postLiDataGruopBlock}>actinoid</li>
+                    <li data-gruopblok="noble gas" onClick={postLiDataGruopBlock}>noble gas</li>
+                    <li data-gruopblok="halogen" onClick={postLiDataGruopBlock}>halogen</li>
+                    <li data-gruopblok="alkaline earth metal" onClick={postLiDataGruopBlock}>alkaline earth metal</li>
                 </ul>
             </div>
             <div className='icon_box' style={{fontSize: "20px"}} onClick={handleOpenFilter}>
@@ -85,10 +145,10 @@ const Sidebar = () => {
 
             <div className="phase" style={{display: "none"}} ref={phaseDiv}>
                 <ul>
-                    <li>solid</li>
-                    <li>liquid</li>
-                    <li>gas</li>
-                    <li>unknown</li>
+                    <li data-elementState="solid" onClick={postLiDataElementstate}>solid</li>
+                    <li data-elementState="liquid" onClick={postLiDataElementstate}>liquid</li>
+                    <li data-elementState="gas" onClick={postLiDataElementstate}>gas</li>
+                    <li data-elementState="unknown" onClick={postLiDataElementstate}>unknown</li>
                 </ul>
             </div>
             <div className='icon_box' onClick={handleOpenPhase}>
