@@ -1631,7 +1631,7 @@
       "groupBlock": "lanthanoid",
       "yearDiscovered": 1842,
       "block": "f",
-      "cpkHexColor": "0",
+      "cpkHexColor": "30FFC7",
       "period": 6,
       "group": 3
     },
@@ -2687,7 +2687,7 @@
       "groupBlock": "transition metal",
       "yearDiscovered": 1994,
       "block": "d",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 10
     },
@@ -2713,7 +2713,7 @@
       "groupBlock": "transition metal",
       "yearDiscovered": 1994,
       "block": "d",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 11
     },
@@ -2739,7 +2739,7 @@
       "groupBlock": "transition metal",
       "yearDiscovered": 1996,
       "block": "d",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 12
     },
@@ -2765,7 +2765,7 @@
       "groupBlock": "post-transition metal",
       "yearDiscovered": 2003,
       "block": "p",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 13
     },
@@ -2791,7 +2791,7 @@
       "groupBlock": "post-transition metal",
       "yearDiscovered": 1998,
       "block": "p",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 14
     },
@@ -2817,7 +2817,7 @@
       "groupBlock": "post-transition metal",
       "yearDiscovered": 2003,
       "block": "p",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 15
     },
@@ -2843,7 +2843,7 @@
       "groupBlock": "post-transition metal",
       "yearDiscovered": 2000,
       "block": "p",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 16
     },
@@ -2869,7 +2869,7 @@
       "groupBlock": "post-transition metal",
       "yearDiscovered": 2010,
       "block": "p",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 17
     },
@@ -2895,7 +2895,7 @@
       "groupBlock": "noble gas",
       "yearDiscovered": 2002,
       "block": "p",
-      "cpkHexColor": "unknown",
+      "cpkHexColor": "FFFFFF",
       "period": 7,
       "group": 18
     }

@@ -10,8 +10,11 @@ const SingleElement = () => {
     return ( 
     <div className='singleElement_container'>
       <div className="img_box">
+        <div className="link_box">
         <a href={`https://en.wikipedia.org/wiki/${element.name}`} target="_blank"><i class="bi bi-wikipedia"></i></a>
-        <img src={`https://images-of-elements.com/${element.name.toLowerCase()}.jpg`} alt="images of Elements" />
+        <div className="block_name" style={{backgroundColor: `#${element.cpkHexColor}`,color: element.cpkHexColor === 'FFFFFF' && "#333"}}>{element.groupBlock}</div>
+        </div>
+        <img srcSet={`https://images-of-elements.com/${element.name.toLowerCase()}.jpg`} alt="Element image is not loded !" />
         <div className="name_box">
             <h4>{element.name}</h4>
             <h2 style={{color: `#${element.cpkHexColor}`}}>{element.symbol}</h2>

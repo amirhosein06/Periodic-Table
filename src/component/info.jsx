@@ -6,6 +6,7 @@ const Info = () => {
             <h1>Periodic Table</h1>
             <div className='created'>
                <h3>Created By <span>Amirhosein Zolfaghary</span></h3>
+               <img src="https://media.licdn.com/dms/image/D4E03AQEQQvOgXnqyWg/profile-displayphoto-shrink_200_200/0/1712819746436?e=1718841600&v=beta&t=bBPjO05ghrEKtNrpr3ai-luSS-ByF1J0KtO8f6a4O5s" alt="Amirhosein Zolfaghari" />
                <a href="https://github.com/amirhosein06"><i class="bi bi-github"></i></a>
                <a href="https://www.linkedin.com/in/amirhosein-zolfaghari06/"><i class="bi bi-linkedin"></i></a>
             </div>
