@@ -7,6 +7,44 @@ const SingleElement = () => {
     const routeParams = useParams();
     const element = data[routeParams.atomicNumber -1 ];
 
+    const createSup = ()=>{
+      let newarray = element.electronicConfiguration.split('');
+      newarray.forEach((item,index)=>{
+        if ((newarray[index + 1] === ' ' && item !== "[" && item !== "]") || index === newarray.length -1) {
+          newarray[index] = (<sup>{item}</sup>);
+        }
+      })
+      return newarray;
+    }
+    const createRomanNumber = ()=>{
+      const num = element.group;
+        if (isNaN(num))
+            return NaN;
+        var digits = String(+num).split(""),
+            key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+                   "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+                   "","I","II","III","IV","V","VI","VII","VIII","IX"],
+            roman = "",
+            i = 3;
+        while (i--)
+            roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+        return Array(+digits.join("") + 1).join("M") + roman;
+    }
+    const addkelvin = (point)=>{
+      if (point !== 'unknown') {
+        return point + ' K';
+      }else{
+        return point;
+      }
+    }
+    const addPm = (radius)=>{
+      if (radius !== 'unknown') {
+        return radius + ' pm';
+      }else{
+        return radius;
+      }
+    }
+
     return ( 
     <div className='singleElement_container'>
       <div className="img_box">
@@ -20,12 +58,30 @@ const SingleElement = () => {
             <h2 style={{color: `#${element.cpkHexColor}`}}>{element.symbol}</h2>
         </div> 
       </div>
+      <div className="information_box">
+        <div className="info_mini">name : <span>{element.name}</span></div>
+        <div className="info_mini">amotic mass : <span>{element.atomicMass} g/mol</span></div>
+        <div className="info_mini">amotic number : <span>{element.atomicNumber}</span></div>
+        <div className="info_mini">density : <span>{element.density} g/cm<sup>3</sup></span></div>
+        <div className="info_mini">year discovered : <span>{element.yearDiscovered}</span></div>
+        <div className="info_mini">electronic Configuration : <span>{createSup()}</span></div>
+        <div className="info_mini">period : <span>{element.period}</span></div>
+        <div className="info_mini">group : <span>{createRomanNumber()}</span></div>
+        <div className="info_mini">block : <span>{element.block} - block</span></div>
+        <div className="info_mini">phase : <span>{element.standardState}</span></div>
+        <div className="info_mini">melting point : <span>{addkelvin(element.meltingPoint)}</span></div>
+        <div className="info_mini">boiling point : <span>{addkelvin(element.boilingPoint)}</span></div>
+        <div className="info_mini info_min_img">emission spectrum : <img src={`https://www.astronomy.ohio-state.edu/pogge.1/TeachRes/HandSpec/${element.name.toLowerCase()}.png`} alt='image is not loded !'/></div>
+        <div className="info_mini">oxidation states : <span>{element.oxidationStates}</span></div>
+        <div className="info_mini">electro negativity : <span>{element.electronegativity}</span></div>
+        <div className="info_mini">electron affinity : <span>{element.electronAffinity}</span></div>
+        <div className="info_mini">bonding type : <span>{element.bondingType}</span></div>
+        <div className="info_mini">ionization energy : <span>{element.ionizationEnergy}</span></div>
+        <div className="info_mini">atomic radius : <span>{addPm(element.atomicRadius)}</span></div>
+        <div className="info_mini">van der waals radius : <span>{addPm(element.vanDerWaalsRadius)}</span></div>
+      </div>
     </div> 
     );
 }
  
 export default SingleElement;
-
-
-
-{/* <img src={`https://www.astronomy.ohio-state.edu/pogge.1/TeachRes/HandSpec/${element.name.toLowerCase()}.png`} alt="Chemical Elements" /> */}
