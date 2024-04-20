@@ -7,7 +7,7 @@
     src: url(../font/kidie-monster/Kidie\ Monster.ttf);
 }
 :root .info_container{
-    --color: #fff;
+    --textcolor: #fff;
 }
 .info_container{
     width: 100%;
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--color);
+    color: var(--textcolor);
     font-family: popins;
 }
 .info_container .created{
@@ -46,25 +46,25 @@
     height: 130px;
 }
 .info_container .created a{
-    color: var(--color);
+    color: var(--textcolor);
     font-size: 22px;
 }
 .gitpage{
     margin-top: 50px;
     width: 300px;
     height: 50px;
-    border: 1px solid var(--color);
+    border: 1px solid var(--textcolor);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: popins;
-    color: var(--color);
+    color: var(--textcolor);
     gap: 10px;
     text-decoration: none;
 }
 .moreproject{
     margin-top: 50px;
-    color: var(--color);
+    color: var(--textcolor);
     word-spacing: 5px;
 }

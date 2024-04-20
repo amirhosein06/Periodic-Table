@@ -31,7 +31,8 @@ const Element = ({element}) => {
     }
 
     return (
-    <div className='element_container' onClick={goToelement} style={{borderBottomColor: `#${element.cpkHexColor}`}} ref={elementContainer}>
+    <div className='element_container' onClick={goToelement} style={{borderBottomColor: `#${element.cpkHexColor}`,
+    '--textcolor': `#${elementcontext.colorCodes.textcolor}`,'--backcolor': `#${elementcontext.colorCodes.backcolor}`}} ref={elementContainer}>
     <h2 className='atom_symbol' style={{color: `#${element.cpkHexColor}`,fontSize: elementcontext.zoomVal * 4 + 27 + 'px'}}>{element.symbol}</h2>
     <h4 className='atomic_number' style={{fontSize: elementcontext.zoomVal * 2 + 11 + 'px'}}>{element.atomicNumber}</h4>
     <h6 className='atom_name' style={{fontSize: elementcontext.zoomVal * 2.5 + 8 + 'px'}}>{element.name}</h6>

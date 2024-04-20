@@ -31,7 +31,8 @@ const Content = () => {
     }, []);
     
     return (
-        <div className='content_container' style={{overflow: elementcontext.zoomVal === 0 ? "hidden" : "scroll"}}> 
+        <div className='content_container' style={{overflow: elementcontext.zoomVal === 0 ? "hidden" : "scroll",
+        '--scrollColor': `#${elementcontext.colorCodes.scrollColor}`}}> 
         <div className='content' style={{width: `${100 + (elementcontext.zoomVal * 20)}%`,
         height:`${100 + (elementcontext.zoomVal * 20)}%`}}>
             <div className='block_S_top'>

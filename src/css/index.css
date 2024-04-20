@@ -1,5 +1,5 @@
 :root{
-  --scrollcolor: #fff
+  --scrollColor: #fff;
 }
 *{
     margin: 0;
@@ -25,7 +25,7 @@ body{
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--scrollcolor);
+    background-color: var(--scrollColor);
     border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {

@@ -1,5 +1,5 @@
 import '../css/sidebar.css';
-import { useContext,useRef,useState } from 'react';
+import { useContext,useRef,useState,useEffect } from 'react';
 import ElementContex from './context/context';
 
 const Sidebar = () => {
@@ -7,8 +7,20 @@ const Sidebar = () => {
     const [rangeVal, setrangeVal] = useState(0);
     const filterDiv = useRef();
     const phaseDiv = useRef();
+    const themeBtn = useRef();
     const [filterOpen, setfilterOpen] = useState(false);
     const [phaseOpen, setphaseOpen] = useState(false);
+    const [DarkTheme, setDarkTheme] = useState(true);
+
+    useEffect(()=>{
+        const getTheme =  localStorage.getItem("ThemeState");
+        if (getTheme === null || getTheme === 'Dark') {
+            return;
+        }else{
+            setDarkTheme(false);
+            chageTheme(themeBtn);
+        }
+    },[])
 
     const goToSearch = ()=>{
         window.location.assign('/search');
@@ -124,11 +136,48 @@ const Sidebar = () => {
             elementcontext.elementStateset([false,'']);
         }
     }
+    
+    const chageTheme = (target)=>{
+        if (DarkTheme === true) {
+            setDarkTheme(false);
+            target.current.innerHTML = `<i class="bi bi-moon-stars-fill"></i>`;
+            elementcontext.colorCodesSet({
+                masterBack: 'F8EFCE',
+                scrollColor: '333',
+                textcolor: '101214',
+                backcolor: 'F5DCB7',
+                backcolorSidbar: 'F5DCB7',
+                iconcolor: '333',
+                symbolback: 'F8EFCE'
+            });
+            elementcontext.ThemeStateSet('Light');
+            localStorage.removeItem("ThemeState");
+            localStorage.setItem("ThemeState",'Light');
+        }else{
+            setDarkTheme(true);
+            target.current.innerHTML = `<i class="bi bi-brightness-high-fill"></i>`;
+            elementcontext.colorCodesSet({
+                masterBack: '08090a',
+                scrollColor: 'fff',
+                textcolor: 'fff',
+                backcolor: '101214',
+                backcolorSidbar: '202020',
+                iconcolor: 'fff',
+                symbolback: '24292e'
+            });
+            elementcontext.ThemeStateSet('Dark');
+            localStorage.removeItem("ThemeState");
+            localStorage.setItem("ThemeState",'Dark');
+        }
+    }
 
     return ( 
-        <div className='sidebar'>
+        <div className='sidebar' style={{
+            '--backcolorSidbar': `#${elementcontext.colorCodes.backcolorSidbar}`,
+            '--iconcolor': `#${elementcontext.colorCodes.iconcolor}`
+        }}>
 
-            <div className='icon_box'><i class="bi bi-brightness-high-fill"></i></div>
+            <div className='icon_box theme_btn' ref={themeBtn} onClick={()=>{chageTheme(themeBtn)}}><i class="bi bi-brightness-high-fill"></i></div>
 
             <div className="filter" style={{display: "none"}} ref={filterDiv}>
                 <ul>

@@ -1,9 +1,11 @@
 import '../css/search.css';
 import data from '../data/data.json';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
 import ItemSearch from './itemsearch';
+import ElementContex from './context/context';
 
 const Search = () => {
+    const elementcontext = useContext(ElementContex);
     const [inputval, setinputval] = useState('');
     const [dataelement, setdataelement] = useState(data);
 
@@ -19,7 +21,10 @@ const Search = () => {
     }
 
     return (
-    <div className='search_container'>
+    <div className='search_container' style={{
+        '--backcolor': `#${elementcontext.colorCodes.symbolback}`,
+        '--textcolor': `#${elementcontext.colorCodes.textcolor}`
+    }}>
          <button className="back_btn" onClick={()=>{window.history.back()}}><i class="bi bi-chevron-left"></i>Back to table</button> 
         <div className="top">
             <input type="search" placeholder="Search by elements..." value={inputval} onChange={handleinputchange}/>

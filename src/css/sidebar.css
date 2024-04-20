@@ -3,7 +3,7 @@
     src: url(../font/Raleway/Raleway-VariableFont_wght.ttf);
 }
 :root .sidebar{
-    --backcolor: #202020;
+    --backcolorSidbar: #202020;
     --iconcolor: #fff;
 }
 .sidebar{
@@ -23,7 +23,7 @@
 .sidebar .icon_box{
     width: 45px;
     height: 45px;
-    background: var(--backcolor);
+    background: var(--backcolorSidbar);
     box-shadow: #00000040 0px 0.0625em 0.0625em, #00000040 0px 0.125em 0.5em;
     display: flex;
     align-items: center;
@@ -62,7 +62,7 @@
     height: 8px;
 }
 .icon_box_input input[type="range"]::-webkit-slider-thumb{
-    background-color: var(--backcolor);
+    background-color: var(--backcolorSidbar);
     border: 1px solid var(--iconcolor);
     border-radius: 50%;
     -webkit-appearance: none;
@@ -90,7 +90,7 @@
 .sidebar .filter{
     position: absolute;
     position: absolute;
-    background-color: var(--backcolor);
+    background-color: var(--backcolorSidbar);
     color: var(--iconcolor);
     border-radius: 5px;
     width: 50%;
@@ -98,7 +98,7 @@
 }
 .sidebar .phase{
     position: absolute;
-    background-color: var(--backcolor);
+    background-color: var(--backcolorSidbar);
     color: var(--iconcolor);
     border-radius: 5px;
     width: 30%;
@@ -136,4 +136,7 @@
 }
 .sidebar .liActive:hover{
     text-decoration: none !important;
+}
+.theme_btn i{
+    pointer-events: none;
 }

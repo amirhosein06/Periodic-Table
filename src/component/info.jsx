@@ -1,8 +1,11 @@
 import '../css/info.css';
+import { useContext } from 'react';
+import ElementContex from './context/context';
 
 const Info = () => {
+    const elementcontext = useContext(ElementContex);
     return ( 
-        <div className="info_container">
+        <div className="info_container" style={{'--textcolor': `#${elementcontext.colorCodes.textcolor}`}}>
             <h1>Periodic Table</h1>
             <div className='created'>
                <h3>Created By <span>Amirhosein Zolfaghary</span></h3>

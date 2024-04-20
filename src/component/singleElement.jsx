@@ -1,9 +1,12 @@
 import '../css/singleElement.css';
 import { useParams } from "react-router-dom";
 import data from '../data/data.json';
+import { useContext } from 'react';
+import ElementContex from './context/context';
 
 
 const SingleElement = () => {
+    const elementcontext = useContext(ElementContex);
     const routeParams = useParams();
     const element = data[routeParams.atomicNumber -1 ];
 
@@ -46,7 +49,12 @@ const SingleElement = () => {
     }
 
     return ( 
-    <div className='singleElement_container'>
+    <div className='singleElement_container' style={{
+      '--textcolor': `#${elementcontext.colorCodes.textcolor}`,
+      '--backcolor': `#${elementcontext.colorCodes.backcolor}`,
+      '--symbolbackcolor': `#${elementcontext.colorCodes.symbolback}`
+
+    }}>
       <div className="img_box">
         <div className="link_box">
         <a href={`https://en.wikipedia.org/wiki/${element.name}`} target="_blank"><i class="bi bi-wikipedia"></i></a>
