@@ -47,6 +47,13 @@ const SingleElement = () => {
         return radius;
       }
     }
+    const adddensity = (dens)=>{
+      if (dens !== 'unknown') {
+        return dens + ' g/cm';
+      }else{
+        return dens;
+      }
+    }
 
     return ( 
     <div className='singleElement_container' style={{
@@ -70,7 +77,7 @@ const SingleElement = () => {
         <div className="info_mini">name : <span>{element.name}</span></div>
         <div className="info_mini">amotic mass : <span>{element.atomicMass} g/mol</span></div>
         <div className="info_mini">amotic number : <span>{element.atomicNumber}</span></div>
-        <div className="info_mini">density : <span>{element.density} g/cm<sup>3</sup></span></div>
+        <div className="info_mini">density : <span>{adddensity(element.density)}<sup>3</sup></span></div>
         <div className="info_mini">year discovered : <span>{element.yearDiscovered}</span></div>
         <div className="info_mini">electronic Configuration : <span>{createSup()}</span></div>
         <div className="info_mini">period : <span>{element.period}</span></div>
