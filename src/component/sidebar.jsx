@@ -1,6 +1,7 @@
 import '../css/sidebar.css';
 import { useContext,useRef,useState,useEffect } from 'react';
 import ElementContex from './context/context';
+import img from '../css/vecteezy_close-up-of-scientific-microscope-with-metal-lens-data_1737986.jpg';
 
 const Sidebar = () => {
     const elementcontext = useContext(ElementContex);
@@ -170,6 +171,11 @@ const Sidebar = () => {
             localStorage.setItem("ThemeState",'Dark');
         }
     }
+    const dowlodingImg =()=>{
+        // navigator.share(img);
+        // console.log(navigator.canShare(img));
+        navigator.clipboard.write('../css/vecteezy_close-up-of-scientific-microscope-with-metal-lens-data_1737986.jpg');
+    }
 
     return ( 
         <div className='sidebar' style={{
@@ -221,6 +227,8 @@ const Sidebar = () => {
             </div>
             <i class="bi bi-zoom-out" onClick={handleRangeDecrease}></i>
             </div>
+
+            <div className='icon_box' onClick={dowlodingImg}><i class="bi bi-image"></i></div>
 
             <div className='icon_box' onClick={goToInfo}><i class="bi bi-info-circle-fill"></i></div>
         </div>

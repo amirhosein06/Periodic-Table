@@ -1,0 +1,75 @@
+.bour_model{
+    height: 330px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+    padding: 10px 10px;
+
+}
+.bour_model .line{
+    border: 1px solid var(--textcolor);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.bour_model .line_7{
+    width: 320px;
+    height: 320px;
+    /* position: absolute;
+    top: 15%;
+    left: calc(50% - 160px); */
+}
+.bour_model .line_7 .electeron{
+   width: 320px;
+}
+.bour_model .line_6,.bour_model .line_6 .electeron{
+    width: 280px;
+    height: 280px;
+}
+.bour_model .line_5,.bour_model .line_5 .electeron{
+    width: 240px;
+    height: 240px;
+}
+.bour_model .line_4,.bour_model .line_4 .electeron{
+    width: 200px;
+    height: 200px;
+}
+.bour_model .line_3,.bour_model .line_3 .electeron{
+    width: 160px;
+    height: 160px;
+}
+.bour_model .line_2,.bour_model .line_2 .electeron{
+    width: 120px;
+    height: 120px;
+}
+.bour_model .line_1,.bour_model .line_1 .electeron{
+    width: 80px;
+    height: 80px;
+}
+.bour_model .circle{
+    width: 30px;
+    height: 30px;
+    background-color: var(--textcolor);
+    border-radius: 50%;
+}
+.bour_model .electeron{
+    height: 12px !important;
+    position: absolute;
+    left: -0.5px;
+}
+.bour_model .electeron::before{
+    content: '';
+    position: absolute;
+    top: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    background-color: var(--textcolor);
+    border-radius: 50%;
+    left: -4.5px;
+}
