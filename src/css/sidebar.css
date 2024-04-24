@@ -140,3 +140,13 @@
 .theme_btn i{
     pointer-events: none;
 }
+.sidebar .img_shoter{
+    content: '';
+    display: none;
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    box-shadow: inset 0px 0px 77px 12px var(--iconcolor);
+    transition: .5s;
+    right: 0;
+}

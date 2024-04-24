@@ -1,7 +1,8 @@
 import '../css/sidebar.css';
 import { useContext,useRef,useState,useEffect } from 'react';
 import ElementContex from './context/context';
-import img from '../css/vecteezy_close-up-of-scientific-microscope-with-metal-lens-data_1737986.jpg';
+import imgdark from '../Periodic_Table_amirhoseinzolfaghari_Dark.jpg';
+import imglight from '../Periodic_Table_amirhoseinzolfaghari_Light.jpg';
 
 const Sidebar = () => {
     const elementcontext = useContext(ElementContex);
@@ -9,6 +10,7 @@ const Sidebar = () => {
     const filterDiv = useRef();
     const phaseDiv = useRef();
     const themeBtn = useRef();
+    const imgShoter = useRef();
     const [filterOpen, setfilterOpen] = useState(false);
     const [phaseOpen, setphaseOpen] = useState(false);
     const [DarkTheme, setDarkTheme] = useState(true);
@@ -172,9 +174,10 @@ const Sidebar = () => {
         }
     }
     const dowlodingImg =()=>{
-        // navigator.share(img);
-        // console.log(navigator.canShare(img));
-        navigator.clipboard.write('../css/vecteezy_close-up-of-scientific-microscope-with-metal-lens-data_1737986.jpg');
+        imgShoter.current.style.display = 'block';
+        setTimeout(() => {
+            imgShoter.current.style.display = 'none';
+        }, 200);
     }
 
     return ( 
@@ -228,7 +231,9 @@ const Sidebar = () => {
             <i class="bi bi-zoom-out" onClick={handleRangeDecrease}></i>
             </div>
 
-            <div className='icon_box' onClick={dowlodingImg}><i class="bi bi-image"></i></div>
+            <a download={DarkTheme === true ? imgdark : imglight} href={DarkTheme === true ? imgdark : imglight}
+              onClick={dowlodingImg} className='icon_box'><i class="bi bi-file-earmark-image"></i></a>
+              <span className='img_shoter' ref={imgShoter}></span>
 
             <div className='icon_box' onClick={goToInfo}><i class="bi bi-info-circle-fill"></i></div>
         </div>
