@@ -1,5 +1,5 @@
 .bour_model{
-    height: 330px;
+    height: 340px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -7,8 +7,8 @@
     justify-content: center;
     align-items: flex-start;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 10px 10px;
-
 }
 .bour_model .line{
     border: 1px solid var(--textcolor);
@@ -21,9 +21,6 @@
 .bour_model .line_7{
     width: 320px;
     height: 320px;
-    /* position: absolute;
-    top: 15%;
-    left: calc(50% - 160px); */
 }
 .bour_model .line_7 .electeron{
    width: 320px;
@@ -72,4 +69,40 @@
     background-color: var(--textcolor);
     border-radius: 50%;
     left: -4.5px;
+}
+@keyframes rotateanimit {
+    100%{
+        rotate: 360deg;
+    }
+}
+@keyframes rotateanimitleft {
+    100%{
+        rotate: -360deg;
+    }
+}
+.bour_model .line_1{
+    animation: rotateanimit 180s infinite linear;
+}
+.bour_model .line_2{
+    animation: rotateanimitleft 175s infinite linear;
+}
+.bour_model .line_3{
+    animation: rotateanimit 170s infinite linear;
+}
+.bour_model .line_4{
+    animation: rotateanimitleft 165s infinite linear;
+}
+.bour_model .line_5{
+    animation: rotateanimit 160s infinite linear;
+}
+.bour_model .line_6{
+    animation: rotateanimitleft 155s infinite linear;
+}
+.bour_model .line_7{
+    animation: rotateanimit 150s infinite linear;
+}
+.bour_model:hover .line_7,.bour_model:hover .line_6,.bour_model:hover .line_5,
+.bour_model:hover .line_4,.bour_model:hover .line_3,.bour_model:hover .line_2,
+.bour_model:hover .line_1{
+    animation: none;
 }

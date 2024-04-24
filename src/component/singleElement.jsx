@@ -95,7 +95,7 @@ const SingleElement = () => {
         <div className="info_mini">ionization energy : <span>{element.ionizationEnergy}</span></div>
         <div className="info_mini">atomic radius : <span>{addPm(element.atomicRadius)}</span></div>
         <div className="info_mini">van der waals radius : <span>{addPm(element.vanDerWaalsRadius)}</span></div>
-        <BohrModel elementNumber={element.atomicNumber}/>
+        <BohrModel electeronLayer={element.electronicConfiguration}/>
       </div>
     </div> 
     );
