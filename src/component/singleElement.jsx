@@ -12,10 +12,22 @@ const SingleElement = () => {
     const element = data[routeParams.atomicNumber -1 ];
 
     const createSup = ()=>{
-      let newarray = element.electronicConfiguration.split('');
+      let newarray = element.electronicConfiguration.split(' ');
       newarray.forEach((item,index)=>{
-        if ((newarray[index + 1] === ' ' && item !== "[" && item !== "]") || index === newarray.length -1) {
-          newarray[index] = (<sup>{item}</sup>);
+        let finallArray = item.split('');
+        if (finallArray[0] !== '[') {
+          if (finallArray.length === 3) {
+            finallArray[2] = (<sup>{finallArray[2]}</sup>);
+          }else{
+            finallArray[2] = (<sup>{finallArray[2]}</sup>);
+            finallArray[3] = (<sup>{finallArray[3]}</sup>);
+          }
+        }
+        finallArray = [...finallArray,'  '];
+        if (finallArray[0] === '[') {
+          newarray = finallArray;
+        }else{
+          newarray =  [...newarray,finallArray];
         }
       })
       return newarray;
