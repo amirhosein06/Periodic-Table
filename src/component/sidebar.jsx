@@ -11,6 +11,7 @@ const Sidebar = () => {
     const phaseDiv = useRef();
     const themeBtn = useRef();
     const imgShoter = useRef();
+    const closeBtn = useRef();
     const [filterOpen, setfilterOpen] = useState(false);
     const [phaseOpen, setphaseOpen] = useState(false);
     const [DarkTheme, setDarkTheme] = useState(true);
@@ -57,14 +58,28 @@ const Sidebar = () => {
     const handleOpenFilter =()=>{
         const ulChildrenArrayFilter = filterDiv.current.children[0].children;
         const ulChildrenArrayPhase = phaseDiv.current.children[0].children;
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        const iconboxes = document.querySelectorAll('.icon_box');
 
         if (filterOpen === false && phaseOpen === false) {
             filterDiv.current.style.display = "block";
+            closeBtn.current.style.display = 'block';
+            if (windowMedia.matches) {
+                iconboxes.forEach((item =>{
+                    item.style.display = 'none';
+                }));
+            };
             setfilterOpen(true);
         }else if (filterOpen === false && phaseOpen === true) {
             setphaseOpen(false);
             handleOpenPhase();
             filterDiv.current.style.display = "block";
+            closeBtn.current.style.display = 'block';
+            if (windowMedia.matches) {
+                iconboxes.forEach((item =>{
+                    item.style.display = 'none';
+                }));
+            };
             setfilterOpen(true);
             ulChildrenArrayPhase[0].classList.remove('liActive');
             [...ulChildrenArrayPhase].forEach((item)=>{
@@ -74,6 +89,12 @@ const Sidebar = () => {
         }else{
             setfilterOpen(false);
             filterDiv.current.style.display = "none";
+            closeBtn.current.style.display = 'none';
+            if (windowMedia.matches) {
+                iconboxes.forEach((item =>{
+                    item.style.display = 'flex';
+                }));
+            };
             ulChildrenArrayFilter[0].classList.remove('liActive');
             [...ulChildrenArrayFilter].forEach((item)=>{
                 item.classList.remove('liActive');
@@ -84,14 +105,28 @@ const Sidebar = () => {
     const handleOpenPhase =()=>{
         const ulChildrenArrayFilter = filterDiv.current.children[0].children;
         const ulChildrenArrayPhase = phaseDiv.current.children[0].children;
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        const iconboxes = document.querySelectorAll('.icon_box');
 
         if (filterOpen === false && phaseOpen === false) {
             phaseDiv.current.style.display = "block";
+            closeBtn.current.style.display = 'block';
+            if (windowMedia.matches) {
+                iconboxes.forEach((item =>{
+                    item.style.display = 'none';
+                }));
+            };
             setphaseOpen(true);
         }else if (filterOpen === true && phaseOpen === false) {
             setfilterOpen(false);
             handleOpenFilter();
             phaseDiv.current.style.display = "block";
+            closeBtn.current.style.display = 'block';
+            if (windowMedia.matches) {
+                iconboxes.forEach((item =>{
+                    item.style.display = 'none';
+                }));
+            };
             setphaseOpen(true);
             ulChildrenArrayFilter[0].classList.remove('liActive');
             [...ulChildrenArrayFilter].forEach((item)=>{
@@ -101,6 +136,12 @@ const Sidebar = () => {
         }else{
             setphaseOpen(false);
             phaseDiv.current.style.display = "none";
+            closeBtn.current.style.display = 'none';
+            if (windowMedia.matches) {
+                iconboxes.forEach((item =>{
+                    item.style.display = 'flex';
+                }));
+            };
             ulChildrenArrayPhase[0].classList.remove('liActive');
             [...ulChildrenArrayPhase].forEach((item)=>{
                 item.classList.remove('liActive');
@@ -179,12 +220,24 @@ const Sidebar = () => {
             imgShoter.current.style.display = 'none';
         }, 200);
     }
+    const selectClosing = ()=>{
+        if (filterOpen === true) {
+            setfilterOpen(false);
+            handleOpenFilter();
+        }else if (phaseOpen === true) {
+            setphaseOpen(false);
+            handleOpenPhase();
+        }
+       closeBtn.current.style.display = 'none';
+    }
 
     return ( 
         <div className='sidebar' style={{
             '--backcolorSidbar': `#${elementcontext.colorCodes.backcolorSidbar}`,
             '--iconcolor': `#${elementcontext.colorCodes.iconcolor}`
         }}>
+
+            <button onClick={selectClosing} ref={closeBtn} className='closeBtn'><i class="bi bi-x-lg"></i></button>
 
             <div className='icon_box theme_btn' ref={themeBtn} onClick={()=>{chageTheme(themeBtn)}}><i class="bi bi-brightness-high-fill"></i></div>
 
