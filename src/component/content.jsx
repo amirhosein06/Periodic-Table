@@ -29,12 +29,28 @@ const Content = () => {
             blockSt: blockSt
         })
     }, []);
+    const cretewidth = ()=>{
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        if (windowMedia.matches) {
+            return `${1900 + (elementcontext.zoomVal * 290)}px`;
+        }else{
+            return `${100 + (elementcontext.zoomVal * 20)}%`;
+        }
+    }
+    const creteheight = ()=>{
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        if (windowMedia.matches) {
+            return `${935 + (elementcontext.zoomVal * 140)}px`;
+        }else{
+            return `${100 + (elementcontext.zoomVal * 20)}%`;
+        }
+    }
     
     return (
         <div className='content_container' style={{overflow: elementcontext.zoomVal === 0 ? "hidden" : "scroll",
         '--scrollColor': `#${elementcontext.colorCodes.scrollColor}`}}> 
-        <div className='content' style={{width: `${100 + (elementcontext.zoomVal * 20)}%`,
-        height:`${100 + (elementcontext.zoomVal * 20)}%`}}>
+        <div className='content' style={{width: cretewidth(),
+        height: creteheight()}}>
             <div className='block_S_top'>
             {blockedDtata.blockSt?.map((item,index)=>(
                     <Element element={item} key={index}/>

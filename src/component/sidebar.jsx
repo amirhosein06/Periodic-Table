@@ -12,6 +12,7 @@ const Sidebar = () => {
     const themeBtn = useRef();
     const imgShoter = useRef();
     const closeBtn = useRef();
+    const sidbar = useRef();
     const [filterOpen, setfilterOpen] = useState(false);
     const [phaseOpen, setphaseOpen] = useState(false);
     const [DarkTheme, setDarkTheme] = useState(true);
@@ -67,6 +68,7 @@ const Sidebar = () => {
             if (windowMedia.matches) {
                 iconboxes.forEach((item =>{
                     item.style.display = 'none';
+                    sidbar.current.style.height = '470px';
                 }));
             };
             setfilterOpen(true);
@@ -78,6 +80,7 @@ const Sidebar = () => {
             if (windowMedia.matches) {
                 iconboxes.forEach((item =>{
                     item.style.display = 'none';
+                    sidbar.current.style.height = '470px';
                 }));
             };
             setfilterOpen(true);
@@ -93,6 +96,7 @@ const Sidebar = () => {
             if (windowMedia.matches) {
                 iconboxes.forEach((item =>{
                     item.style.display = 'flex';
+                    sidbar.current.style.height = '230px';
                 }));
             };
             ulChildrenArrayFilter[0].classList.remove('liActive');
@@ -232,7 +236,7 @@ const Sidebar = () => {
     }
 
     return ( 
-        <div className='sidebar' style={{
+        <div className='sidebar' ref={sidbar} style={{
             '--backcolorSidbar': `#${elementcontext.colorCodes.backcolorSidbar}`,
             '--iconcolor': `#${elementcontext.colorCodes.iconcolor}`
         }}>

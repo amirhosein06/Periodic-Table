@@ -29,13 +29,37 @@ const Element = ({element}) => {
     const goToelement = ()=>{
         window.location.assign(`/element/${element.atomicNumber}`);
     }
+    const cretefontH2 = ()=>{
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        if (windowMedia.matches) {
+            return elementcontext.zoomVal * 5 + 37 + 'px';
+        }else{
+            return elementcontext.zoomVal * 4 + 27 + 'px';
+        }
+    }
+    const cretefontH4 = ()=>{
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        if (windowMedia.matches) {
+            return elementcontext.zoomVal * 4 + 17 + 'px';
+        }else{
+            return elementcontext.zoomVal * 2 + 11 + 'px';
+        }
+    }
+    const cretefontH6 = ()=>{
+        let windowMedia = window.matchMedia("(max-width: 1100px)");
+        if (windowMedia.matches) {
+            return elementcontext.zoomVal * 2.5 + 13 + 'px';
+        }else{
+            return elementcontext.zoomVal * 2.5 + 8 + 'px';
+        }
+    }
 
     return (
     <div className='element_container' onClick={goToelement} style={{borderBottomColor: `#${element.cpkHexColor}`,
     '--textcolor': `#${elementcontext.colorCodes.textcolor}`,'--backcolor': `#${elementcontext.colorCodes.backcolor}`}} ref={elementContainer}>
-    <h2 className='atom_symbol' style={{color: `#${element.cpkHexColor}`,fontSize: elementcontext.zoomVal * 4 + 27 + 'px'}}>{element.symbol}</h2>
-    <h4 className='atomic_number' style={{fontSize: elementcontext.zoomVal * 2 + 11 + 'px'}}>{element.atomicNumber}</h4>
-    <h6 className='atom_name' style={{fontSize: elementcontext.zoomVal * 2.5 + 8 + 'px'}}>{element.name}</h6>
+    <h2 className='atom_symbol' style={{color: `#${element.cpkHexColor}`,fontSize: cretefontH2()}}>{element.symbol}</h2>
+    <h4 className='atomic_number' style={{fontSize: cretefontH4()}}>{element.atomicNumber}</h4>
+    <h6 className='atom_name' style={{fontSize: cretefontH6()}}>{element.name}</h6>
     </div>
     );
 }
