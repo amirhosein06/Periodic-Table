@@ -55,9 +55,12 @@
 }
 .element_container:hover .atom_symbol{
     text-shadow:
-    /* -1px -1px 0 #101214,  
-     1px -1px 0 #101214,
-     -1px 1px 0 #101214,
-      1px 1px 0 #101214, */
       0px 0px 15px var(--shadowColor);
+}
+
+/* for tablet */
+@media only screen and (max-width: 1100px){
+    .element_container{
+        box-shadow: none !important;
+    }
 }

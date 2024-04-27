@@ -16,6 +16,7 @@ const Sidebar = () => {
     const [filterOpen, setfilterOpen] = useState(false);
     const [phaseOpen, setphaseOpen] = useState(false);
     const [DarkTheme, setDarkTheme] = useState(true);
+    const [sidebarOpen, setsidebarOpen] = useState(true);
 
     useEffect(()=>{
         const getTheme =  localStorage.getItem("ThemeState");
@@ -234,14 +235,40 @@ const Sidebar = () => {
         }
        closeBtn.current.style.display = 'none';
     }
+    const SidabrOpenWidhBtn = (e)=>{
+       if (sidebarOpen === true) {
+        setsidebarOpen(false);
+        e.target.style.rotate = "0deg";
+        sidbar.current.style.height = "130px";
+        const iconboxs = document.querySelectorAll(".icon_box");
+        iconboxs.forEach(item=>{
+            item.style.display = 'none';
+        });
+        themeBtn.current.style.display = 'flex';
+        const nth2 = document.querySelector(".nth2");
+        nth2.style.display = 'flex';
+        const nth3 = document.querySelector(".nth3");
+        nth3.style.display = 'flex';
+       }else{
+        setsidebarOpen(true);
+        e.target.style.rotate = "180deg";
+        sidbar.current.style.height = "295px";
+        const iconboxs = document.querySelectorAll(".icon_box");
+        iconboxs.forEach(item=>{
+            item.style.display = 'flex';
+        });
+       }
+    }
 
     return ( 
-        <div className='sidebar' ref={sidbar} style={{
+                 <div className='sidebar' ref={sidbar} style={{
             '--backcolorSidbar': `#${elementcontext.colorCodes.backcolorSidbar}`,
             '--iconcolor': `#${elementcontext.colorCodes.iconcolor}`
         }}>
 
             <button onClick={selectClosing} ref={closeBtn} className='closeBtn'><i class="bi bi-x-lg"></i></button>
+
+            <button className="handleSidebaropen" onClick={SidabrOpenWidhBtn} style={{color: `#${elementcontext.colorCodes.iconcolor}`}}><i class="bi bi-chevron-down"></i></button>
 
             <div className='icon_box theme_btn' ref={themeBtn} onClick={()=>{chageTheme(themeBtn)}}><i class="bi bi-brightness-high-fill"></i></div>
 
@@ -260,7 +287,7 @@ const Sidebar = () => {
                     <li data-gruopblok="alkaline earth metal" onClick={postLiDataGruopBlock}>alkaline earth metal</li>
                 </ul>
             </div>
-            <div className='icon_box' style={{fontSize: "20px"}} onClick={handleOpenFilter}>
+            <div className='icon_box nth2' style={{fontSize: "20px"}} onClick={handleOpenFilter}>
                 <i class="bi bi-filter"></i>
             </div>
 
@@ -272,7 +299,7 @@ const Sidebar = () => {
                     <li data-elementState="unknown" onClick={postLiDataElementstate}>unknown</li>
                 </ul>
             </div>
-            <div className='icon_box' onClick={handleOpenPhase}>
+            <div className='icon_box nth3' onClick={handleOpenPhase}>
             <i class="bi bi-box"></i>
             </div>
 
