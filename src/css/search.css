@@ -77,3 +77,22 @@
         font-size: 23px;
     }
 }
+/* for mobile */
+@media only screen and (max-width: 550px){
+    .search_container .top{
+        margin-top: 60px;
+        margin-bottom: 15px;
+    }
+    .back_btn{
+        width: 93%;
+        left: 3%;
+        height: 50px;
+        font-size: 19px;
+        position: absolute;
+    }
+    .search_container .top input{
+        width: 96%;
+        height: 70px;
+        font-size: 23px;
+    }
+}

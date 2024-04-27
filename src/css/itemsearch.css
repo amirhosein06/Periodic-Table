@@ -39,3 +39,10 @@
     font-family: var(--font);
     color: var(--textcolor);
 }
+
+/* for mobile */
+@media only screen and (max-width: 550px){
+    .search_element{
+        width: 98%;
+    }
+}
