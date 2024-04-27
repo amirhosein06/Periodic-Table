@@ -116,3 +116,42 @@
         font-size: 25px;
     }
 }
+/* for mobile */
+@media only screen and (max-width: 550px){
+    .info_container .created h3{
+        width: 100%;
+        text-align: center;
+    }
+    .info_container{
+        margin-top: 10px;
+    }
+    .info_container h1{
+        font-size: 30px;
+    }
+    .info_container .created span{
+        font-size: 35px;
+    }
+    .info_container .created img{
+        width: 60px;
+        height: 60px;
+    }
+    .info_container .created img:hover{
+        width: 80px;
+        height: 80px;
+    }
+    .info_container .created a{
+        font-size: 27px;
+        text-align: right;
+        padding-inline: 0px;
+    }
+    .gitpage{
+        width: 300px;
+        margin-top: 50px;
+        height: 60px;
+        font-size: 18px;
+        gap: 10px;
+    }
+    .moreproject{
+        font-size: 18px;
+    }
+}
