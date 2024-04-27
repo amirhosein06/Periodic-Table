@@ -68,3 +68,51 @@
     color: var(--textcolor);
     word-spacing: 5px;
 }
+
+
+/* for tablet */
+@media only screen and (max-width: 1100px){
+    .info_container .created{
+        flex-wrap: wrap;
+    }
+    .info_container .created h3{
+        width: 100%;
+        text-align: center;
+    }
+    .info_container{
+        margin-top: 140px;
+    }
+    .info_container h1{
+        font-size: 40px;
+    }
+    .info_container .created span{
+        font-size: 65px;
+    }
+    .info_container .created img{
+        width: 100px;
+        height: 100px;
+    }
+    .info_container .created img:hover{
+        width: 170px;
+        height: 170px;
+    }
+    .info_container .created a{
+        font-size: 32px;
+        width: 47%;
+        text-align: right;
+        padding-inline: 10px;
+    }
+    .info_container .created a:last-child{
+        text-align: left !important;
+    }
+    .gitpage{
+        margin-top: 50px;
+        width: 400px;
+        height: 60px;
+        font-size: 20px;
+        gap: 15px;
+    }
+    .moreproject{
+        font-size: 25px;
+    }
+}
