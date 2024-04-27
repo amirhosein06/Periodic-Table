@@ -25,8 +25,8 @@ const Search = () => {
         '--backcolor': `#${elementcontext.colorCodes.symbolback}`,
         '--textcolor': `#${elementcontext.colorCodes.textcolor}`
     }}>
-         <button className="back_btn" onClick={()=>{window.history.back()}}><i class="bi bi-chevron-left"></i>Back to table</button> 
         <div className="top">
+         <button className="back_btn" onClick={()=>{window.history.back()}}><i class="bi bi-chevron-left"></i>Back to table</button> 
             <input type="search" placeholder="Search by elements..." value={inputval} onChange={handleinputchange}/>
         </div>
         <div className="bottom">

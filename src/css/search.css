@@ -53,3 +53,27 @@
     align-items: center;
     justify-content: center;
 }
+
+
+/* for tablet */
+@media only screen and (max-width: 1100px){
+    .search_container{
+        width: 98%;
+        overflow-y: scroll;
+    }
+    .search_container .top{
+        margin-bottom: 40px;
+        gap: 2%;
+    }
+    .back_btn{
+        position: unset;
+        width: 20%;
+        height: 60px;
+        font-size: 18px;
+    }
+    .search_container .top input{
+        width: 75%;
+        height: 60px;
+        font-size: 23px;
+    }
+}
