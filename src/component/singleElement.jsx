@@ -67,6 +67,30 @@ const SingleElement = () => {
         return dens;
       }
     }
+    const creteabefore = ()=>{
+       return data[element.atomicNumber-2] !== undefined ? (
+        <div onClick={goTobefor} style={{cursor: "pointer",borderBottom: `2.5px solid #${data[element.atomicNumber-2].cpkHexColor}`}}>
+          <i class="bi bi-chevron-left"></i>
+          <span style={{marginRight: "10px"}}>{data[element.atomicNumber-2].atomicNumber}</span> 
+           {data[element.atomicNumber-2].name}
+        </div>
+       ) : " ";
+    }
+    const creteaafter = ()=>{
+      return data[element.atomicNumber] !== undefined ? (
+       <div onClick={goToafter} style={{cursor: "pointer",borderBottom: `2.5px solid #${data[element.atomicNumber].cpkHexColor}`}}>
+         {data[element.atomicNumber].name} 
+          <span style={{marginLeft: "10px"}}>{data[element.atomicNumber].atomicNumber}</span>
+         <i class="bi bi-chevron-right"></i>
+       </div>
+      ) : " ";
+   }
+   const goTobefor = ()=>{
+    window.location.assign(`/element/${data[element.atomicNumber-2].atomicNumber}`);
+   }
+   const goToafter = ()=>{
+    window.location.assign(`/element/${data[element.atomicNumber].atomicNumber}`);
+   }
 
     return ( 
     <div className='singleElement_container' style={{
@@ -87,6 +111,7 @@ const SingleElement = () => {
         </div> 
       </div>
       <div className="information_box">
+        <div className="info_mini">{creteabefore()}{creteaafter()}</div>
         <div className="info_mini">name : <span>{element.name}</span></div>
         <div className="info_mini">amotic mass : <span>{element.atomicMass} g/mol</span></div>
         <div className="info_mini">amotic number : <span>{element.atomicNumber}</span></div>
