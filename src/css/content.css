@@ -94,10 +94,14 @@
 
 
 /* for tablet */
+@media only screen and (max-width: 1400px){
+    .content_container{
+        overflow: scroll !important;
+    }
+}
 @media only screen and (max-width: 1100px){
     .content_container{
         width: 100% !important;
-        overflow: scroll !important;
         min-width: unset;
     }
     .content{

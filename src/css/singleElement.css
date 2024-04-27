@@ -133,3 +133,40 @@
     color: #8f5050;
     background-color: #202020;
 }
+
+/* for tablet */
+@media only screen and (max-width: 1100px){
+    .singleElement_container{
+        width: 95%;
+        margin-top: 10px;
+    }
+    body{
+        overflow-y: scroll !important;
+    }
+    .img_box{
+        height: 330px;
+    }
+    .name_box h4{
+        font-size: 50px;
+    }
+    .name_box h2{
+        font-size: 90px;
+    }
+    .link_box .block_name{
+        line-height: 50px;
+        padding-inline: 30px;
+        font-size: 30px;
+    }
+    .img_box a{
+        width: 65px;
+        height: 65px;
+        font-size: 32px;
+    }
+    .info_mini{
+        padding: 10px 10px;
+        font-size: 22px;
+    }
+    .info_mini span{
+        font-size: 28px;
+    }
+}
