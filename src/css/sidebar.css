@@ -289,4 +289,10 @@
         width: 95% !important;
         order: 10 !important;
     }
+    .sidebar .filter{
+        height: 360px;
+    }
+    .sidebar .filter ul li{
+        width: 50%;
+    }
 }

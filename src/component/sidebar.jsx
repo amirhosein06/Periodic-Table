@@ -234,6 +234,8 @@ const Sidebar = () => {
             handleOpenPhase();
         }
        closeBtn.current.style.display = 'none';
+       const handleSidebaropen = document.querySelector(".handleSidebaropen");
+       handleSidebaropen.style.rotate = "180deg";
     }
     const SidabrOpenWidhBtn = (e)=>{
        if (sidebarOpen === true) {
