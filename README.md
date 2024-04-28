@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Periodic Table - React app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### deployed on [link](link)
 
-## Available Scripts
+## screenShots
 
-In the project directory, you can run:
+![periodic table Screenshot](/screenShots/Screenshot-darkMode.jpg)
+![periodic table Screenshot](/screenShots/Screenshot-lightMode.jpg)
+![periodic table Screenshot](/screenShots/Screenshot-filter.jpg)
+![periodic table Screenshot](/screenShots/Screenshot-search.jpg)
 
-### `npm start`
+<img src=screenShots/Screenshot-element1.jpg alt=periodicTableScreenshot width="32%" />
+<img src=screenShots/Screenshot-element2.jpg alt=periodicTableScreenshot width="32%" />
+<img src=screenShots/Screenshot-element3.jpg alt=periodicTableScreenshot width="32%" />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+- dark/light mode
 
-### `npm test`
+- View elements based on group/state
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- search on elements based on name/symbol/atomicNumber
 
-### `npm run build`
+- Click on the elements to view the information for each element individually
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The possibility of viewing the Bohr model of elements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Ability to go directly to the previous/next element
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Responsive Design
 
-### `npm run eject`
+- Easy routing with react-router-dom
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- The possibility of downloading the table poster
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone link
+cd periodictable
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contact
+Created by [Amirhosein Zolfaghari](https://github.com/amirhosein06)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[More Projects](https://github.com/amirhosein06?tab=repositories)
