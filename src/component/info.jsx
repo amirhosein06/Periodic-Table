@@ -13,7 +13,7 @@ const Info = () => {
                <a href="https://github.com/amirhosein06"><i class="bi bi-github"></i></a>
                <a href="https://www.linkedin.com/in/amirhosein-zolfaghari06/"><i class="bi bi-linkedin"></i></a>
             </div>
-            <a  href="" className="gitpage">
+            <a  href="https://github.com/amirhosein06/Periodic-Table" className="gitpage">
             <i class="bi bi-github"></i>
             see project github page
             </a>
