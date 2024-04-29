@@ -9,9 +9,11 @@
 ![periodic table Screenshot](/screenShots/Screenshot-filter.jpg)
 ![periodic table Screenshot](/screenShots/Screenshot-search.jpg)
 
+<div style="display:flex;align-items:center;">
 <img src=screenShots/Screenshot-element1.jpg alt=periodicTableScreenshot width="32%" />
 <img src=screenShots/Screenshot-element2.jpg alt=periodicTableScreenshot width="32%" />
 <img src=screenShots/Screenshot-element3.jpg alt=periodicTableScreenshot width="32%" />
+</div>
 
 
 ## Features
@@ -36,9 +38,7 @@
 ## Installation
 
 ```bash
-git clone link
-cd periodictable
-npm install
+gh repo clone amirhosein06/Periodic-Table
 ```
 
 ## Contact
