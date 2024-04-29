@@ -1,6 +1,6 @@
 # Periodic Table - React app
 
-### deployed on [link](link)
+### deployed on [https://periodic-table-amirhosein06.netlify.app/](https://periodic-table-amirhosein06.netlify.app/)
 
 ## screenShots
 
